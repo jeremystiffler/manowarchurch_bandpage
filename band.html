@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Man O War Church — Band Rehearsal Music</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f3ef;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 40px 24px;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .header .icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .header .subtitle {
+    font-size: 15px;
+    color: #888;
+    font-weight: 500;
+  }
+
+  /* ── Top links ── */
+  .top-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .top-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #e0ddd8;
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .top-links a:hover {
+    border-color: #c4b8a8;
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+
+  /* ── Song card ── */
+  .song {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    border: 1px solid #e8e4df;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.03);
+  }
+
+  .song-header {
+    margin-bottom: 24px;
+  }
+
+  .song-num {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #b0a598;
+    margin-bottom: 8px;
+  }
+
+  .song h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+  }
+
+  .song h2 .key {
+    color: #c0392b;
+    font-weight: 700;
+  }
+
+  .song .soloists {
+    display: block;
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+
+  .song .note {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #fef9e7;
+    border: 1px solid #f0e6c8;
+    font-size: 12px;
+    color: #8a6d3b;
+    font-weight: 500;
+  }
+
+  /* ── Buttons ── */
+  .buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .btn-mt {
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    color: #fff;
+  }
+
+  .btn-mt:hover {
+    background: linear-gradient(135deg, #a93226, #c0392b);
+  }
+
+  .btn-chart {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: #fff;
+  }
+
+  .btn-chart:hover {
+    background: linear-gradient(135deg, #1e8449, #27ae60);
+  }
+
+  .btn-satb {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #fff;
+  }
+
+  .btn-satb:hover {
+    background: linear-gradient(135deg, #1a252f, #2c3e50);
+  }
+
+  .btn.disabled {
+    background: #f0ede8;
+    color: #bbb;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .btn .emoji {
+    font-size: 16px;
+  }
+
+  /* ── Footer ── */
+  .divider {
+    height: 1px;
+    background: #e0ddd8;
+    margin: 40px 0;
+  }
+
+  footer {
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+    padding-bottom: 20px;
+  }
+
+  footer a {
+    color: #888;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  footer a:hover {
+    color: #c0392b;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    body { padding: 24px 16px; }
+    .song { padding: 24px 20px; }
+    .song h2 { font-size: 18px; }
+    .buttons { flex-direction: column; }
+    .btn { justify-content: center; width: 100%; }
+    .top-links { flex-direction: column; align-items: center; }
+    .top-links a { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="icon">🎵</div>
+    <h1>Wednesday Night Service</h1>
+    <p class="subtitle">June 17, 2026 — Rehearsal Music</p>
+  </div>
+
+  <div class="top-links">
+    <a href="https://planningcenteronline.com/service_types/644982/plans/after/today/public">📋 Planning Center Plan</a>
+    <a href="https://www.dropbox.com/sh/yeil24arm0q2a0e/AADNkNx_RXfExbesOhGrhnuDa?dl=0">📁 Dropbox (All Worship Music)</a>
+  </div>
+
+  <!-- Song 1 -->
+  <div class="song">
+    <div class="song-header">
+      <span class="song-num">Song 1</span>
+      <h2>Goodbye Yesterday <span class="key">in G</span></h2>
+      <span class="soloists">Isabella &amp; Jayden</span>
+    </div>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://services.planningcenteronline.com/attachments/200022338" target="_blank"><span class="emoji">🎧</span> Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fo/sddj5ir1qpkv6bpa6cr93/AMOb9cmYjsyxctwTB9uMaBc?rlkey=utln67t9gw02ci6yymc9l61bh&dl=0" target="_blank"><span class="emoji">📄</span> Music PDF</a>
+      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fi/z0cut562pr3qsfsptpm0j/Goodbye-Yesterday-Live-ELEVATION-RH...-Piano-Choir-SATB.pdf?rlkey=3mutr10tfsr2fseuwu1kximxx&dl=0" target="_blank"><span class="emoji">🎹</span> Piano PDF</a>
+    </div>
+  </div>
+
+  <!-- Song 2 -->
+  <div class="song">
+    <div class="song-header">
+      <span class="song-num">Song 2</span>
+      <h2>WAR <span class="key">in C</span></h2>
+      <span class="soloists">Altos: Oksana &amp; Meredith · Tenors: Ben &amp; Taylor · Sopranos: Bailey &amp; Alina</span>
+    </div>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://services.planningcenteronline.com/attachments/230177953" target="_blank"><span class="emoji">🎧</span> Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fo/n1qexatbl98zvc5v9tm5h/AIrOi38V33m-NN07T74UTIM?rlkey=uwn6yptuvn7rrf2cay30ab5wt&dl=0" target="_blank"><span class="emoji">📄</span> Music PDF</a>
+      <a class="btn btn-satb disabled" href="#"><span class="emoji">🎹</span> Piano PDF (N/A)</a>
+    </div>
+  </div>
+
+  <!-- Song 3 -->
+  <div class="song">
+    <div class="song-header">
+      <span class="song-num">Song 3</span>
+      <h2>I Will Follow Jesus (LIVE) <span class="key">in Am</span></h2>
+      <span class="note">▶ Start YouTube at 7:00</span>
+    </div>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://services.planningcenteronline.com/attachments/205025754" target="_blank"><span class="emoji">🎧</span> Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/k5wtc0a6nzfw60mfkif0p/I-Will-Follow-Jesus-Live-Tags-Edited-C.pdf?rlkey=sgb8bx2dylljp7ue33gg51fwq&dl=0" target="_blank"><span class="emoji">📄</span> Music PDF</a>
+      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fi/sllgkhukl7806uonmo1tn/I-Will-Follow-Jesus-Circuit-Ride...-Piano-Choir-SATB.pdf?rlkey=ykotjbdf49jsbvk8d4ok1xitf&dl=0" target="_blank"><span class="emoji">🎹</span> Piano PDF</a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <footer>
+    Man O War Church &mdash; Lexington, KY<br>
+    <a href="https://manowarchurch.org">manowarchurch.org</a>
+  </footer>
+
+</div>
+</body>
+</html>
