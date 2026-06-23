@@ -108,6 +108,9 @@
     transition: opacity 0.2s;
   }
   .btn:hover { opacity: 0.85; }
+  /* CRITICAL: All links MUST open in new tab, NEVER download.
+     Dropbox links use &dl=0 to force browser view (not download).
+     target="_blank" is on every <a> tag — DO NOT remove. */
   .btn-mt {
     background: #e63946;
     color: #fff;
