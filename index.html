@@ -7,166 +7,160 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #1a1a2e;
-    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222;
     min-height: 100vh;
-    padding: 20px;
   }
-  .container { max-width: 700px; margin: 0 auto; }
-  .top-links {
+  a { text-decoration: none; }
+  .site-header {
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 26px 5vw 18px;
+  }
+  .nav-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
     display: flex;
-    gap: 16px;
-    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
     flex-wrap: wrap;
   }
-  .top-links a {
-    background: #0f3460;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s;
+  .logo {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #222;
+    text-transform: lowercase;
   }
-  .top-links a:hover {
-    background: #e94560;
-    transform: translateY(-2px);
-  }
-  .btn {
-    display: inline-block;
-    padding: 12px 20px;
-    margin-right: 12px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.2s;
-  }
-  h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: #fff;
-  }
-  .subtitle {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 30px;
-  }
-  .song {
-    background: #16213e;
-    border-radius: 12px;
-    padding: 30px 24px;
-    margin-bottom: 24px;
-    border: 1px solid #0f3460;
-  }
-  .song h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #fff;
-    line-height: 1.4;
-  }
-  .song h2 .number {
-    display: inline-block;
-    background: #e94560;
-    color: white;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 14px;
-    margin-right: 8px;
-  }
-  .song h2 .key {
-    color: #7ec8e3;
-    font-weight: 700;
-  }
-  .song h2 .soloists {
-    color: #a8b2d1;
+  .logo span { color: #777; }
+  .logo strong { color: #111; font-weight: 700; }
+  nav { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  nav a {
+    color: #111;
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: 400;
+    letter-spacing: .04em;
   }
-  .buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  .give {
+    border: 1px solid #111;
+    padding: 12px 25px;
+    background: #fff;
   }
+  .container { max-width: 1080px; margin: 0 auto; padding: 58px 24px 80px; text-align: center; }
+  h1.page-title {
+    font-size: clamp(42px, 6vw, 68px);
+    letter-spacing: .04em;
+    font-weight: 800;
+    margin-bottom: 42px;
+    color: #111;
+  }
+  .section { border-top: 1px solid #d9d9d9; padding: 38px 0; }
+  h2.service-title {
+    font-size: clamp(28px, 4vw, 42px);
+    color: #222;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: .03em;
+  }
+  .subtitle { color: #666; margin-bottom: 24px; font-size: 15px; }
+  .resource-row { display: grid; grid-template-columns: repeat(2, minmax(240px, 1fr)); gap: 28px; margin: 10px auto 0; max-width: 900px; }
+  .song { border-top: 1px solid #d9d9d9; padding: 46px 0 42px; }
+  .song h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 300;
+    line-height: 1.35;
+    color: #222;
+    margin: 0 auto 30px;
+    max-width: 920px;
+  }
+  .song h2 .key { font-weight: 400; color: #222; }
+  .song h2 .soloists { font-size: .72em; color: #555; font-weight: 300; }
+  .buttons { display: flex; flex-direction: column; align-items: center; gap: 22px; }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
+    justify-content: center;
+    gap: 12px;
+    width: min(420px, 100%);
+    min-height: 58px;
+    padding: 16px 24px;
+    border-radius: 7px;
+    color: #fff;
     font-size: 14px;
-    font-weight: 600;
-    transition: opacity 0.2s;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: opacity .18s, transform .18s;
   }
-  .btn:hover { opacity: 0.85; }
-  /* CRITICAL: All links MUST open in new tab, NEVER download.
-     Dropbox links use &dl=0 to force browser view (not download).
-     target="_blank" is on every <a> tag — DO NOT remove. */
-  .btn-mt {
-    background: #e63946;
-    color: #fff;
-  }
-  .btn-chart {
-    background: #2a9d8f;
-    color: #fff;
-  }
-  .btn-satb {
-    background: #457b9d;
-    color: #fff;
-  }
-  .btn.disabled {
-    background: #333;
-    color: #666;
-    pointer-events: none;
-  }
-  .divider {
-    height: 1px;
-    background: #333;
-    margin: 30px 0;
-  }
+  .btn:hover { opacity: .9; transform: translateY(-1px); }
+  .btn-plan { background: #53b857; }
+  .btn-dropbox { background: #2f83c5; }
+  .btn-mt { background: #43c7df; }
+  .btn-chart { background: #b28ad7; }
+  .btn-satb { background: #8e63b6; }
+  .btn.disabled { background: #c8c8c8; color: #777; pointer-events: none; }
   footer {
-    text-align: center;
-    color: #555;
-    font-size: 12px;
-    margin-top: 40px;
+    background: #344b60;
+    color: #fff;
+    padding: 48px 24px 32px;
+    margin-top: 0;
+  }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: left; }
+  footer h3 { font-size: 16px; margin-bottom: 14px; letter-spacing: .06em; text-transform: uppercase; }
+  footer p, footer a { color: #e7edf2; font-size: 14px; line-height: 1.8; }
+  .copyright { max-width: 1080px; margin: 34px auto 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.22); text-align: center; color: #e7edf2; font-size: 13px; }
+  @media (max-width: 760px) {
+    nav { gap: 14px; }
+    .resource-row { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; text-align: center; }
   }
 </style>
 </head>
 <body>
-<div class="container">
-
-  <div class="top-links">
-    <a href="https://planningcenteronline.com/service_types/644982/plans/after/today/public">📋 Planning Center Plan</a>
-    <a href="https://www.dropbox.com/sh/yeil24arm0q2a0e/AADNkNx_RXfExbesOhGrhnuDa?dl=0">📁 Dropbox (All Worship Music)</a>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="logo" href="https://manowarchurch.org"><span>man o'war</span> <strong>church</strong></a>
+    <nav>
+      <a href="https://manowarchurch.org/watch-live">Watch Live</a>
+      <a href="https://manowarchurch.org/media">Media</a>
+      <a href="https://manowarchurch.org/about-us">About Us</a>
+      <a href="https://manowarchurch.org/connect">Connect</a>
+      <a href="https://manowarchurch.org/im-new">I'm New</a>
+      <a href="https://manowarchurch.org/give" class="give">Give</a>
+    </nav>
   </div>
+</header>
 
-  <h1>🎵 Sunday Service — July 5, 2026</h1>
-  <p class="subtitle">Updated July 2, 2026</p>
+<main class="container">
+  <h1 class="page-title">REHEARSAL MUSIC</h1>
+
+  <section class="section">
+    <h2 class="service-title">Sunday Service — July 5, 2026</h2>
+    <p class="subtitle">Updated July 2, 2026</p>
+    <div class="resource-row">
+      <a class="btn btn-plan" href="https://planningcenteronline.com/service_types/644982/plans/after/today/public" target="_blank">✎ Planning Center Plan</a>
+      <a class="btn btn-dropbox" href="https://www.dropbox.com/sh/yeil24arm0q2a0e/AADNkNx_RXfExbesOhGrhnuDa?dl=0" target="_blank">▣ Dropbox Link (All Worship Music)</a>
+    </div>
+  </section>
 
   <div class="song">
     <h2>He Has Done Great Things <span class="key">in G</span> <span class="soloists">— Misty, Jeremy, Alina</span></h2>
     <div class="buttons">
-      <a class="btn btn-mt" href="https://services.planningcenteronline.com/songs/30121473/arrangements/35254596" target="_blank">🎧 Rehearsal Track</a>
-      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/jle9ljy8i546ypdhacqso/11-He-Has-Done-Great-Things-Live-Bethel-Music...-Choir-Sheet-CH.pdf?rlkey=4lfik6muj09ubhlc2fj3itg9r&amp;dl=0" target="_blank">📄 Music PDF</a>
-      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fi/9fiamf5dlhpxlc18dm90e/He-Has-Done-Great-Things-Live-Bethel-Music...-Piano-Choir-SATB.pdf?rlkey=n6ddh7mex4iwsyba2n737wtvc&amp;dl=0" target="_blank">🎹 Piano PDF</a>
+      <a class="btn btn-mt" href="https://www.multitracks.com/songs/John-Wilds/I-Want-Jesus/He-Has-Done-Great-Things-(Live)/rehearsalmix/?key=28#navigation" target="_blank">🎧 Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/yg2thskxcn7actxjv8aqh/He-Has-Done-Great-Things-Live-Bethel-Music-John-Wilds-I-Want-Jesus.G.7.pdf?rlkey=8rrqo0eihi23yasfdbwovel38" target="_blank">📄 Music PDF</a>
+      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fi/9fiamf5dlhpxlc18dm90e/He-Has-Done-Great-Things-Live-Bethel-Music...-Piano-Choir-SATB.pdf?rlkey=n6ddh7mex4iwsyba2n737wtvc" target="_blank">🎹 Piano PDF</a>
     </div>
   </div>
 
   <div class="song">
     <h2>Center <span class="key">in G</span> <span class="soloists">— Hanna, Lauren, Taylor</span></h2>
     <div class="buttons">
-      <a class="btn btn-mt" href="https://services.planningcenteronline.com/songs/30424902/arrangements/35633911" target="_blank">🎧 Rehearsal Track</a>
-      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fo/sddj5ir1qpkv6bpa6cr93/AMOb9cmYjsyxctwTB9uMaBc?rlkey=utln67t9gw02ci6yymc9l61bh&amp;dl=0" target="_blank">📄 Music PDF</a>
-      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fo/sddj5ir1qpkv6bpa6cr93/AMOb9cmYjsyxctwTB9uMaBc?rlkey=utln67t9gw02ci6yymc9l61bh&amp;dl=0" target="_blank">🎹 Piano PDF</a>
+      <a class="btn btn-mt" href="https://www.multitracks.com/songs/Bethel-Music/We-Must-Respond/Center-(Live)/rehearsalmix/?key=28#navigation" target="_blank">🎧 Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/pf3dluzzuc7ougq43ekv4/Center-Live-Bethel-Music-Abbie-Gamboa-We-Must-Respond.G.7.pdf?rlkey=d0x1rs7a6ufh1hhkvpfjkvkf5" target="_blank">📄 Music PDF</a>
+      <a class="btn btn-satb" href="https://www.dropbox.com/scl/fi/k14xywh0pzz2trnojo57s/Center-Live-Bethel-Music...-Piano-Choir-SATB.pdf?rlkey=1fo85now04u179ywgg4hrqvwq" target="_blank">🎹 Piano PDF</a>
     </div>
   </div>
 
@@ -174,7 +168,7 @@
     <h2>All Is For Your Glory <span class="key">in G</span> </h2>
     <div class="buttons">
       <a class="btn btn-mt disabled" href="#">🎧 Rehearsal Track (N/A)</a>
-      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fo/sddj5ir1qpkv6bpa6cr93/AMOb9cmYjsyxctwTB9uMaBc?rlkey=utln67t9gw02ci6yymc9l61bh&amp;dl=0" target="_blank">📄 Music PDF</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/p29geektoeb3czwjn2w06/All-Is-For-Your-Glory-SongSelect-Chart-in-G-Standard-2-column.pdf?rlkey=9fcrjc5b3wz49ybmgynstfy7m" target="_blank">📄 Music PDF</a>
       <a class="btn btn-satb disabled" href="#">🎹 Piano PDF (N/A)</a>
     </div>
   </div>
@@ -183,19 +177,20 @@
     <h2>Jesus At The Center <span class="key">in G</span> </h2>
     <div class="buttons">
       <a class="btn btn-mt disabled" href="#">🎧 Rehearsal Track (N/A)</a>
-      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fo/sddj5ir1qpkv6bpa6cr93/AMOb9cmYjsyxctwTB9uMaBc?rlkey=utln67t9gw02ci6yymc9l61bh&amp;dl=0" target="_blank">📄 Music PDF</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/32d6qr8jrlldzcq0h4wpc/Jesus-At-The-Center-SongSelect-Chart-in-G-Standard-1-column.pdf?rlkey=kh7zpoqzo2z37y470f1kmacyu" target="_blank">📄 Music PDF</a>
       <a class="btn btn-satb disabled" href="#">🎹 Piano PDF (N/A)</a>
     </div>
   </div>
+</main>
 
-  <div class="divider"></div>
-
-  <footer>
-    Man O War Church &mdash; Lexington, KY<br>
-    <a href="https://manowarchurch.org" style="color: #555;">manowarchurch.org</a>
-  </footer>
-
-</div>
+<footer>
+  <div class="footer-inner">
+    <div><h3>About Us</h3><p><a href="https://manowarchurch.org/about-us">Our Leadership</a><br><a href="https://manowarchurch.org/our-beliefs">Our Beliefs</a><br><a href="https://manowarchurch.org/events">Events Calendar</a></p></div>
+    <div><h3>Get Connected</h3><p><a href="https://manowarchurch.org/groups">Groups</a><br><a href="https://manowarchurch.org/kids">MOW Kids</a><br><a href="https://manowarchurch.org/youth">MOW Youth</a></p></div>
+    <div><h3>Media</h3><p><a href="https://manowarchurch.org/sermons">Sermons</a><br><a href="https://manowarchurch.org/watch-live">Watch Live</a><br><a href="https://manowarchurch.org/podcast">Podcast</a></p></div>
+    <div><h3>Lexington Campus</h3><p>1501 Trent Blvd,<br>Lexington, KY 40515<br>(859) 245-4145</p></div>
+  </div>
+  <div class="copyright">© 2022 Man O War Church. All Rights Reserved.</div>
+</footer>
 </body>
 </html>
-<!-- deploy-bust 2026-07-02T17:30:33.731665Z -->
