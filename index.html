@@ -233,6 +233,11 @@
       setTimeout(sendHeight, 1000);
     });
     window.addEventListener('resize', sendHeight);
+    window.addEventListener('message', (event) => {
+      if (event.origin === hostOrigin && event.data?.type === 'mow-band-page-request-height') {
+        sendHeight();
+      }
+    });
     new ResizeObserver(sendHeight).observe(document.body);
   })();
 </script>
