@@ -216,5 +216,25 @@
   </div>
   <div class="copyright">© 2022 Man O War Church. All Rights Reserved.</div>
 </footer>
+<script>
+  (() => {
+    const hostOrigin = 'https://manowarchurch.org';
+    const sendHeight = () => {
+      const root = document.documentElement;
+      const height = Math.ceil(Math.max(
+        root.scrollHeight, document.body.scrollHeight,
+        root.offsetHeight, document.body.offsetHeight
+      ));
+      window.parent.postMessage({ type: 'mow-band-page-height', height }, hostOrigin);
+    };
+    window.addEventListener('load', () => {
+      sendHeight();
+      setTimeout(sendHeight, 250);
+      setTimeout(sendHeight, 1000);
+    });
+    window.addEventListener('resize', sendHeight);
+    new ResizeObserver(sendHeight).observe(document.body);
+  })();
+</script>
 </body>
 </html>
