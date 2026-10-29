@@ -138,6 +138,67 @@
   <h1 class="page-title">REHEARSAL MUSIC</h1>
 
   <section class="section">
+    <h2 class="service-title">Sunday Service — November 1, 2026</h2>
+    <p class="subtitle">Updated October 29, 2026</p>
+    <div class="resource-row">
+      <a class="btn btn-plan" href="https://services.planningcenteronline.com/service_types/644982/plans/92093314" target="_blank">✎ Planning Center Plan</a>
+      <a class="btn btn-dropbox" href="https://www.dropbox.com/sh/yeil24arm0q2a0e/AADNkNx_RXfExbesOhGrhnuDa?dl=0" target="_blank">▣ Dropbox Link (All Worship Music)</a>
+    </div>
+  </section>
+
+  <div class="song">
+    <h2>Washed <span class="key">in Bb</span> <span class="soloists">— Isabella, Lianet, Nick, Doug, Genia, Cristina, Julieth</span></h2>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://www.multitracks.com/songs/ELEVATION-RHYTHM/WASHED/WASHED/rehearsalmix/?key=5#navigation" target="_blank">🎧 Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/qri5ecy5q82qfaeaswbfk/WASHED-ELEVATION-RHYTHM-WASHED.Bb.7.pdf?rlkey=aakwq5306n0rtd3age2hkgolw" target="_blank">📄 Music PDF</a>
+      
+      
+    </div>
+  </div>
+
+  <div class="song">
+    <h2>Because of Christ <span class="key">in Bb</span> <span class="soloists">— Jeremy, Hanna</span></h2>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://www.multitracks.com/songs/The-Belonging-Co/Here/Because-of-Christ/rehearsalmix/?key=8#navigation" target="_blank">🎧 Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/sh4bbj1j0ljljhi95p4ww/Because-of-Christ-The-Belonging-Co-Here.Bb.pdf?rlkey=a8vgzfetsdpdms4aj71wsa2jd" target="_blank">📄 Music PDF</a>
+      
+      
+    </div>
+  </div>
+
+  <div class="song">
+    <h2>This Place <span class="key">in C</span> <span class="soloists">— Misty, Laura</span></h2>
+    <div class="buttons">
+      <a class="btn btn-mt" href="https://www.multitracks.com/songs/The-Belonging-Co/Eden/This-Place-(Live)/rehearsalmix/?key=10#navigation" target="_blank">🎧 Rehearsal Track</a>
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/7nevy64fduaoe9otkfqya/This-Place-Live-The-Belonging-Co-Natalie-Grant-Mighty-Name-of-Jesus.C.7.pdf?rlkey=7rdtf1yky6fifd3v64r1od5fj" target="_blank">📄 Music PDF</a>
+      
+      
+    </div>
+  </div>
+
+  <div class="song">
+    <h2>Make Me A Bethany <span class="key">in C</span> <span class="soloists">— Misty, Laura</span></h2>
+    <div class="buttons">
+      
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/svtr5bmb7ap9814i0g9yp/Make-me-a-Bethany.pdf?rlkey=3fjs6wfqm4j244cd8iwe7zkrh" target="_blank">📄 Music PDF</a>
+      
+      
+    </div>
+  </div>
+
+  <div class="song">
+    <h2>Worthy Of It All <span class="key">in C</span> <span class="soloists">— Misty, Laura</span></h2>
+    <div class="buttons">
+      
+      <a class="btn btn-chart" href="https://www.dropbox.com/scl/fi/3wwyhec4kq1yvp66djv0b/Worthy-Of-It-All-Onething-Liv...-Chord-Chart-C-2-Column-Layout-2.pdf?rlkey=jb0rtaggzk80t1btnvmwvrh0c" target="_blank">📄 Music PDF</a>
+      
+      
+    </div>
+  </div>
+
+
+  <!-- Preserved prior service: October 18, 2026 -->
+<section class="section">
     <h2 class="service-title">Sunday Service — October 18, 2026</h2>
     <p class="subtitle">Updated October 15, 2026</p>
     <div class="resource-row">
@@ -216,30 +277,5 @@
   </div>
   <div class="copyright">© 2022 Man O War Church. All Rights Reserved.</div>
 </footer>
-<script>
-  (() => {
-    const hostOrigin = 'https://manowarchurch.org';
-    const sendHeight = () => {
-      const root = document.documentElement;
-      const height = Math.ceil(Math.max(
-        root.scrollHeight, document.body.scrollHeight,
-        root.offsetHeight, document.body.offsetHeight
-      ));
-      window.parent.postMessage({ type: 'mow-band-page-height', height }, hostOrigin);
-    };
-    window.addEventListener('load', () => {
-      sendHeight();
-      setTimeout(sendHeight, 250);
-      setTimeout(sendHeight, 1000);
-    });
-    window.addEventListener('resize', sendHeight);
-    window.addEventListener('message', (event) => {
-      if (event.origin === hostOrigin && event.data?.type === 'mow-band-page-request-height') {
-        sendHeight();
-      }
-    });
-    new ResizeObserver(sendHeight).observe(document.body);
-  })();
-</script>
 </body>
 </html>
